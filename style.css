@@ -10,6 +10,21 @@
     --soft-pink: #FFF2E7; /* RGB (255, 242, 231) */
 }
 
+/* Regras Globais */
+* {
+	box-sizing: border-box; /* Inclui padding e border na largura e altura totais */
+}
+
+/* Regras para o html */
+html {
+    scroll-padding-top: 8rem; /* Espaçamento para ancoragem ao rolar */
+}
+
+/* Regras para os títulos */
+h1, h2, h3, h4, h5, h6 {
+	color: var(--peach);
+}
+
 /* Estilos Globais */
 body {
     background-color: var(--bg-dark);
@@ -18,10 +33,6 @@ body {
     line-height: 1.5; /* Espaçamento entre linhas para melhor legibilidade */
 	padding-bottom: 8%;
 	padding-top: 8rem;
-}
-
-* {
-	box-sizing: border-box; /* Inclui padding e border na largura e altura totais */
 }
 
 /* Seções genéricas */
@@ -48,25 +59,40 @@ body {
 	align-self: flex-start;
 	justify-content: space-between;
 	font-weight: bold;
-	color: var(--peach);
 	font-size: 2rem;
+	color: var(--peach);
 }
 
 #header-links {
 	align-self: flex-end;
 }
 
-/* Navegação */
-.nav-links a {
+/* Ajustar tamanhos do header quando diminui a tela */
+@media (max-width: 700px) {
+    #header-links {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 0;
+        gap: 0.7rem;
+    }
+    #header-links a {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+/* Estilo global para todos os links */
+a {
     color: var(--soft-pink);
     margin-left: 3rem; /* Espaçamento entre os links */
     font-size: 1rem; /* Tamanho da fonte dos links */
 	text-decoration: none; /* Remove o sublinhado dos links */
 }
-
-/* Efeito hover para links de navegação */
-.nav-links a:hover {
-	color: var(--peach);
+a:hover {
+    color: var(--peach);
 }
 
 /* Botões */
@@ -86,7 +112,6 @@ body {
 }
 
 /* Seção Sobre */
-
 .about-section {
     margin-bottom: 4rem;
     display: flex;
@@ -99,9 +124,10 @@ body {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    gap: 2rem;
+    gap: 3rem; /* Aumentei um pouco o espaço para respirar */
     width: 100%;
 }
+
 
 .about-text {
     display: flex;
@@ -112,12 +138,39 @@ body {
 
 /* Foto de Perfil */
 .about-section .profile-photo {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  border: 5px solid var(--rust);
-  object-fit: cover;
-  margin-bottom: 0;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid var(--rust);
+    object-fit: cover;
+	margin-top: 50px;
+}
+
+/* Lado esquerdo da seção Sobre */
+.about-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.about-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem 0;
+}
+.about-list li {
+    margin-bottom: 0.8rem;
+    color: var(--soft-pink);
+    font-size: 1rem;
+}
+.about-list a {
+    color: var(--peach);
+    text-decoration: none;
+    font-weight: bold;
+}
+.about-list a:hover {
+    text-decoration: underline;
 }
 
 /* Grid de Projetos */
@@ -133,11 +186,17 @@ body {
     border: 1px solid rgba(164, 90, 73, 0.2); /* Borda sutil */
     border-radius: 8px; /* Cantos arredondados */
     padding: 16px; /* Espaçamento interno fixo */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    color: inherit; /* Herda a cor do texto do pai */
+    display: block; /* Faz o link ocupar todo o cartão */
 }
 
 /* Efeito hover para cartões de projeto */
 .project-card:hover {
-	border-color: var(--peach);
+    border-color: var(--peach);
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+	text-decoration: none;
+	color: inherit;
 }
 
 /* Diferenciação de Texto nos Cartões de Projeto */
@@ -145,6 +204,7 @@ body {
     font-size: 1.3rem; /* Tamanho maior para o nome */
     font-weight: bold;
     margin-bottom: 0.5rem;
+	color: var(--peach);
 }
 
 .project-card p {
@@ -171,4 +231,13 @@ body {
 	backdrop-filter: blur(70px); /* Efeito de desfoque para o fundo, a unidade px define a intensidade */
     border-top: 1px solid rgba(255, 242, 231, 0.3); /* Linha sutil na parte inferior do cabeçalho */
 	padding: 1%; /* Espaçamento interno do rodapé */
+}
+
+/* Footer grid layout */
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    gap: 0.5rem 2rem;
+    align-items: center;
+    justify-items: center;
 }
