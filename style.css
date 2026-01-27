@@ -1,0 +1,141 @@
+/* Variáveis de Cores baseadas na sua paleta */
+:root {
+    --bg-dark: #2F2325; /* RGB (47, 35, 37) */
+    --rust: #A45A49; /* RGB (164, 90, 73) */
+    --peach: #E68E7B; /* RGB (230, 142, 123) */
+    --white: #FFFFFF; /* RGB (255, 255, 255) */
+    --blue: #97D4D9; /* RGB (151, 212, 217) */
+    --green: #B3DFD3; /* RGB (179, 223, 211) */
+    --yellow: #EFC764; /* RGB (239, 199, 100) */
+    --soft-pink: #FFF2E7; /* RGB (255, 242, 231) */
+}
+
+/* Estilos Globais */
+body {
+    background-color: var(--bg-dark);
+    color: var(--soft-pink);
+    font-family: 'Playfair Display', serif;
+    line-height: 1.5; /* Espaçamento entre linhas para melhor legibilidade */
+}
+
+* {
+	box-sizing: border-box; /* Inclui padding e border na largura e altura totais */
+}
+
+/* Seções genéricas */
+.section {
+	padding: 4% 2%; /* Espaçamento interno das seções */
+	margin-bottom: 4%; /* Espaçamento entre as seções */
+}
+
+#first-section {
+	margin-top: 8%; /* Espaçamento superior para a primeira seção */
+}
+
+/* Componentes Específicos */
+.header {
+	display: flex;
+	flex-direction: column;
+    position: fixed; /* Mantém o cabeçalho fixo ao rolar a página */
+    top: 0; /* Fixa o cabeçalho no topo da página */
+	width: 100%; /* Ocupa toda a largura da tela */
+    background: rgba(47, 35, 37, 0.7); /* Fundo semi-transparente, a variável 0,7 define a opacidade */
+    backdrop-filter: blur(70px); /* Efeito de desfoque para o fundo, a unidade px define a intensidade */
+    border-bottom: 1px solid rgba(255, 242, 231, 0.3); /* Linha sutil na parte inferior do cabeçalho */
+    padding: 2% 4%; /* Espaçamento interno do cabeçalho */
+}
+
+/* Id do Logo, para estilização específica e sobrepor o estilo genérico do header */
+#logo {
+	align-self: flex-start;
+	justify-content: space-between;
+	font-weight: bold;
+	color: var(--peach);
+	font-size: 2rem;
+}
+
+#header-links {
+	align-self: flex-end;
+}
+
+/* Navegação */
+.nav-links a {
+    color: var(--soft-pink);
+    margin-left: 3rem; /* Espaçamento entre os links */
+    font-size: 1rem; /* Tamanho da fonte dos links */
+	text-decoration: none; /* Remove o sublinhado dos links */
+}
+
+/* Efeito hover para links de navegação */
+.nav-links a:hover {
+	color: var(--peach);
+}
+
+/* Botões */
+.btn-primary {
+    background-color: var(--rust);
+    color: var(--soft-pink);
+	text-decoration: none;
+    padding: 2%;
+    border-radius: 1rem;
+    font-weight: bold;
+}
+
+/* Efeito hover para botões */
+.btn-primary:hover {
+	background-color: var(--peach);
+	color: var(--rust);
+}
+
+/* Grid de Projetos */
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Três colunas de largura igual */
+	gap: 16px; /* Espaçamento entre os itens do grid */
+}
+
+/* Cartões de Projeto */
+.project-card {
+    background: rgba(255, 255, 255, 0.05); /* Fundo semi-transparente */
+    border: 1px solid rgba(164, 90, 73, 0.2); /* Borda sutil */
+    border-radius: 8px; /* Cantos arredondados */
+    padding: 16px; /* Espaçamento interno fixo */
+}
+
+/* Efeito hover para cartões de projeto */
+.project-card:hover {
+	border-color: var(--peach);
+}
+
+/* Diferenciação de Texto nos Cartões de Projeto */
+.project-card h4 {
+    font-size: 1.3rem; /* Tamanho maior para o nome */
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.project-card p {
+    font-size: 1rem; /* Tamanho menor para a descrição */
+    margin-bottom: 0.5rem;
+}
+
+/* Texto Extra (Tecnologias) */
+.extra-text {
+	color: var(--green);
+	font-size: 12px;
+	font-weight: bold;
+}
+
+/* Descrição do Projeto */
+.footer {
+	font-size: 15px;
+	text-align: start;
+	justify-content: center;
+    position: fixed;
+	bottom: 0; /* Fixa o rodapé na parte inferior da página */
+	width: 100%; /* Ocupa toda a largura da tela */
+	background: rgba(47, 35, 37, 0.7); /* Fundo semi-transparente, a variável 0,7 define a opacidade */
+	backdrop-filter: blur(70px); /* Efeito de desfoque para o fundo, a unidade px define a intensidade */
+    border-top: 1px solid rgba(255, 242, 231, 0.3); /* Linha sutil na parte inferior do cabeçalho */
+	padding: 1%; /* Espaçamento interno do rodapé */
+}
